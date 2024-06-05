@@ -1,0 +1,16 @@
+
+default_platform(:android)
+
+platform :android do
+  desc "Runs all the tests"
+  lane :firebase_distribution do
+    sh "flutter clean"
+    sh "flutter build apk"
+    firebase_app_distribution(
+    app: "1:861645517091:android:5cd5206ed9c67dae4b5c96",
+    firebase_cli_token:"1//03C0gsxejj-LcCgYIARAAGAMSNwF-L9IrksgJySiFV2PAHZll8bXq4yBMPMma-k9nK4w97Grm4xar_bR-fNdGMFYs3bIiB2byNwk",
+    testers: "eslamhegazy968@gmail.com, bri@example.com, cal@example.com",
+    release_notes: "first app note",
+  )
+  end
+end
